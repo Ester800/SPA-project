@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('../partials/head'); %>
+	</head>
+	<body class="container">
+		<header><%- include('../partials/header'); %></header>
+
+		<main>
+			<div class="container">
+				<h1>Top employee</h1>
+				
+				<div class="row justify-content-between">
+			<div><%- include('../partials/people'); %></div>
+		  <!-- YOUR EJS OR HANDLEBARS TEMPLATE LITERALS GO HERE -->
+		  <div class="row justify-content-between">  
+		 	 <div>
+				<% employees.forEach(function(id) {
+					%>
+				<img src="<%= id[1].picture %>">
+				<h6><%= id[1].firstName%> <%= id[1].lastName%></h6>
+				<%= id[1].email%>
+				<% }); %>
+			</div>
+           <!-- Try mocking up some Bootstrap cards or columns with some hard coded data to get an idea of how your templates should look. -->
+				</div>
+			</div>
+		</main>
+
+		<footer><%- include('../partials/footer'); %></footer>
+	</body>
+</html>
